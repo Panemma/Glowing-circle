@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing circle</title>
+    <style>
+        body {
+            margin: 0;
+            background: #050210;
+        }
+
+        #circle {
+            width: 350px;
+            height: 350px;
+            margin: 180px auto;
+            position: relative;
+            background: linear-gradient(to right, #fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite; 
+            animation-play-state: running; 
+            filter: drop-shadow(0 0 20px);
+            
+            
+        }
+
+        #solid {
+            background: black;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            bottom: 25px;
+            left: 25px;
+            border-radius: 50%;  
+        }
+        #circle::before {
+
+            position:absolute;
+            bottom: -25px;
+            left: -25px;        
+            border-radius: 50%; 
+            content: "";
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to right, #fb5dad, #55fb9f, #b97aff);
+            filter: blur(80px) opacity(0.5);
+
+        }
+        @keyframes rotate {
+            0% {
+            transform: rotate(0deg);
+        }
+       
+        100% {
+            transform: rotate(360deg);
+        }
+
+
+    }
+   
+
+    </style>
+</head>
+<body>
+    <div id="shadow">
+    <div id="circle">
+        <div id="solid"></div>
+
+    </div>
+</div>
+    
+</body>
+</html>
